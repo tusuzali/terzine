@@ -304,12 +304,7 @@ background: url("img/home.png")
     font-weight: bold;
 }
 
-/*.categori > h4{
-	
-	font-family: Arial;
-    font-size: 13px;
-    font-weight: bold;
-}*/
+.news {  overflow: hidden; border-bottom: 1px solid #acacac; }
 
 /*BUSINESS NEWS CATEGORY*/
 #business a{
@@ -379,9 +374,6 @@ background: url("img/home.png")
 	border-bottom: none;
 }
 
-.treshi {
-	border-bottom: none;
-}
 .clock p {
     left: 15px;
     position: relative;
@@ -394,10 +386,6 @@ background: url("img/home.png")
 .comment img{
 	border: none;
 	margin-top: -10px;
-}
-.three{
-	margin-top: -70px;
-	float: right;
 }
 
 #ads > div {
