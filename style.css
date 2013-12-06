@@ -133,29 +133,29 @@ nav {
 	margin-bottom: 5px;
 }
 #searchform {
-	width: 308px;
-	padding: 10px 10px 10px 10px;
-	float:right;
-	margin-top: -11px;
+
+	/*padding: 10px 10px 10px 10px;*/
+	/*float:right;*/
+	/*margin-top: -11px;*/
 }
 #searchform #s {
-	 background: none repeat scroll 0 0 #ACA6AC;
+	font-size: 12px;
+	line-height: 16px;
     border: 1px solid #ACACAC;
-    height: 29px;
-    padding: 2px 5px 0;
-    vertical-align: middle;
-    width: 227px;
+	width: 100%;
+	background: url(img/search-icon.png) no-repeat 98% 40% #363636;
+    padding: 5px 8px;
 }
-#searchform #searchsubmit {
-	background: url(img/search-icon.png) no-repeat #363636;
-	width: 61px;
-	height: 29px;
-	font: bold 12px Arial, Helvetica, sans-serif;
-	color: #FFFFFF;
+#s:active {
+	outline: none;
+}
+/*#searchform #searchsubmit {
+
+	height: 100%;
 	vertical-align: middle;
 	border: none;
 	margin-left: -3px;	 
-}
+}*/
 
 #searchform label {
 	font-size: 11px;
@@ -304,13 +304,13 @@ background: url("img/home.png")
     font-weight: bold;
 }
 
-.news img {
-	float: left;
-	margin-right: 15px;
-	margin-bottom: 15px;
-}
+/*.categori > h4{
+	
+	font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+}*/
 
-.news {  overflow: hidden; border-bottom: 1px solid #acacac; }
 /*BUSINESS NEWS CATEGORY*/
 #business a{
 	color: #464646;
@@ -329,7 +329,6 @@ background: url("img/home.png")
 	margin-bottom: 10px;
 	/*margin-top: -50px;*/
 	padding: 6px 0px;
-	text-transform: uppercase;
 
 }
 
@@ -380,6 +379,9 @@ background: url("img/home.png")
 	border-bottom: none;
 }
 
+.treshi {
+	border-bottom: none;
+}
 .clock p {
     left: 15px;
     position: relative;
@@ -392,6 +394,10 @@ background: url("img/home.png")
 .comment img{
 	border: none;
 	margin-top: -10px;
+}
+.three{
+	margin-top: -70px;
+	float: right;
 }
 
 #ads > div {
