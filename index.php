@@ -68,7 +68,7 @@
             <h4><?php echo $category->cat_name; ?></h4>
             <div class="category-home">
         		<div class="col span_6">
-        	        <div class="<?php echo $category->cat_name; ?>-news">
+        	        <div class="<?php echo $category->cat_name; ?>-news news">
         	            <?php echo get_the_post_thumbnail($post->ID, 'medium'); ?>
         	                <h3><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
         	                <div class="meta">
