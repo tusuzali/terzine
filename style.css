@@ -1,0 +1,574 @@
+/*
+Theme Name: 	Terzine
+Theme URI: 		http://poentalabs.com
+Description: 	The totally nude Wordpress theme!
+Version: 		1.0
+Author: 		Poenta WebLab
+Author URI: 	http://poentalabs.com
+Tags: 			poenta, themes, magazine, news
+*/
+
+/*
+===========================
+CONTENTS:
+
+01 Sensible defaults
+02 Typography
+03 Media queries 
+===========================
+*/
+
+/* ---------------------------------------------------------------------------------------------------------- 
+01 Sensible defaults ----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+@import "css/reset.css";
+
+/* IMPORT 12 COLUMN RESPONSIVE GS */
+@import "css/responsive.gs.12col.css";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+
+div,
+article,
+section,
+header,
+footer,
+nav,
+li					{ position:relative; /* For absolutely positioning elements within containers (add more to the list if need be) */ }
+.group:after 		{ display:block; height:0; clear:both; content:"."; visibility:hidden; /* For clearing */ }
+body 				{ background:#fff; /* Don't forget to style your body to avoid user overrides */ }
+::-moz-selection 	{ background:#ff0; color:#333; }
+::selection 		{ background:#ff0; color:#333; }
+
+/* ---------------------------------------------------------------------------------------------------------- 
+02 Typography -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+/*
+
+14 / 16	= 		0.875em 		(14px equivalent)
+16 / 16	= 		1em 			(16px equivalent)
+18 / 16 = 		1.125em 		(18px equivalent)
+21 / 16 = 		1.3125em 		(21px equivalent)
+24 / 16 = 		1.5em 			(24px equivalent)
+30 / 16 = 		1.875em 		(30px equivalent)
+
+*/
+
+body,
+input,
+textarea 			{ /* We strongly recommend you declare font-weight using numerical values, but check to see which weights you're exporting first */ }
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 					{ font-weight:bold; /* This helps to identify headings at the initial build stage, but you should write something more precise later on */ }
+
+/* ---------------------------------------------------------------------------------------------------------- 
+03 Media queries (using a mobile-first approach) ------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+/* 400 and up */
+@media screen and (min-width:400px) {
+
+					{ /* Place your styles here for all widths greater than 400px */ }
+
+}
+
+/* Retina Display */
+@media screen and (-webkit-min-device-pixel-ratio:2) {
+
+					{ /* Place your styles here for all 'Retina' screens */ }
+
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Open Sans', Arial, sans-serif;
+	color:#444;
+	background: #e5e5e5;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+a:hover {
+	color: #acacac;
+}
+
+
+strong{
+	font-weight: bold;
+}
+em{
+	font-style: italic;
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+p {
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+
+header {
+	margin-bottom: 20px;
+
+}
+
+nav {
+	border-bottom: 1px solid #d6d6d6;
+	border-left: 1px solid #d6d6d6;
+	border-right: 1px solid #d6d6d6;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+#searchform {
+	width: 308px;
+	padding: 10px 10px 10px 10px;
+	float:right;
+	margin-top: -11px;
+}
+#searchform #s {
+	 background: none repeat scroll 0 0 #ACA6AC;
+    border: 1px solid #ACACAC;
+    height: 29px;
+    padding: 2px 5px 0;
+    vertical-align: middle;
+    width: 227px;
+}
+#searchform #searchsubmit {
+	background: url(img/search-icon.png) no-repeat #363636;
+	width: 61px;
+	height: 29px;
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	vertical-align: middle;
+	border: none;
+	margin-left: -3px;	 
+}
+
+#searchform label {
+	font-size: 11px;
+	color: #41550e;
+}
+
+#sidebar h3 {
+	font: normal 140%/100% "Trebuchet MS", Tahoma, Arial;
+	color: #758d38;
+	margin: 10px 0px 5px;
+}
+#travel img{
+	border: 2px solid #acacac;
+}
+#categories {
+background: url("img/home.png") 
+  no-repeat bottom center; 
+}
+
+#categories li  {
+	border-top: 3px solid #898989;
+	display: inline;
+	float: left;
+	border-right: 1px solid #898989;
+}
+
+#categories li:last-child {
+	/*border-right: none;*/
+}
+#categories li.active {
+	border-top: 3px solid red;
+}
+#categories li a {
+	display: block;
+	padding: 5px 10px;
+	text-decoration: none;
+	font: bold 13px/18px arial;
+	text-transform: uppercase;
+	color: #000000;
+}
+
+#categories li a:hover {
+	background: #0e5dab;
+	color: #fff;
+}
+
+.breaking-news {
+	background: url(img/breaking.png) no-repeat top left #acacac;
+	padding: 1px 5px 2px;
+	margin-top: -5px;
+}
+
+.breaking-icon {
+	background: url(img/megaphone.png) no-repeat center left;
+	color: #fff;
+	display: inline;
+	padding-left: 12px;
+}
+
+.breaking-news span {
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+.bxslider li {
+	position: relative;
+}
+
+.boxslider img {
+	position: relative!important;
+	z-index: 0;
+}
+
+.featured-text {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	z-index: 1;
+}
+
+.featured-text h2, h3 {
+	background: rgba(0,0,0,.8);
+	color: white;
+	border-radius: 3px;
+}
+
+.featured-text h2 {
+	font-size: 20px;
+	font-size: 2.0rem;
+	width: 100%;
+	padding-left: 10px;
+	margin-bottom: 3px;
+}
+
+.featured-text h3 {
+	font-size: 14px;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	width: 100px;
+	padding-left: 5px;
+	margin-bottom: 3px;
+
+}
+
+.featured-text p {
+	background: rgba(255,255,255,.8);
+	padding-left: 10px;
+	border-radius: 3px;
+}
+
+#news {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#news > div {
+	position: relative;
+	margin-left: 2%;
+	float:left;
+}
+
+#news > div:first-child {
+	margin-left: 0;
+}
+
+#news .caption img {
+	position: relative!important;
+	z-index: 0;
+}
+
+#news > div > .caption p {
+	position: absolute;
+	z-index: 1;
+	background: rgba(0, 0, 0, 8);	
+	bottom: 0px;
+	font-color: white;
+	font-size: 10px;
+	padding: 3px 6px;
+}
+.category > h4 {
+	border-bottom: 1px solid #535353;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/*.categori > h4{
+	
+	font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+}*/
+
+/*BUSINESS NEWS CATEGORY*/
+#business a{
+	color: #464646;
+}
+#business {
+	padding-top: 10px;
+	margin-top: 30px;
+	border-right: 1px solid #acacac;
+	border-bottom: 1px solid #acacac;
+}
+.cat-section > h4{
+	font-size: 18px;
+	font-weight: bold;
+	border-top: 4px solid #003471;
+	/*border-bottom: 1px solid #acacac;*/
+	margin-bottom: 10px;
+	/*margin-top: -50px;*/
+	padding: 6px 0px;
+
+}
+
+.category-home {
+	border: 1px solid #acacac;
+	border-left: none;
+	padding: 15px 0;
+}
+
+.business-news img {
+
+	border:3px solid #021a40;
+	margin-bottom: 10px;
+}
+.business-news>h4{
+ 	font-size: 14px;
+ 	margin-bottom: 5px;
+}
+.business-paragraph>p {
+	font-size: 	14px;
+	margin-top: 10px;
+}
+.business_all{
+	border-top: 1px solid #acacac;
+	margin-top: 373px;
+	text-align: center;
+	padding-bottom: 3px
+}
+
+.short-news a{
+	text-transform: none;
+}
+
+.short-news img{
+	border: 2px solid #acacac;
+	margin-bottom: 10px;
+	float: left;
+	margin-right: 15px;
+}
+.short-news {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #acacac;
+	padding-right: 10px;
+	overflow: hidden;
+}
+
+.short-news:last-child {
+	border-bottom: none;
+}
+
+.treshi {
+	border-bottom: none;
+}
+.clock p {
+    left: 15px;
+    position: relative;
+    top: -29px;
+}
+.clock img{
+	border: none;
+
+}
+.comment img{
+	border: none;
+	margin-top: -10px;
+}
+.three{
+	margin-top: -70px;
+	float: right;
+}
+
+#ads > div {
+	width: 300px;
+	float: right;
+	background: #e5e5e5;
+	margin-bottom: 30px;
+}
+
+#media div{
+	position: relative;
+	float: left;
+	padding-right: 2px;
+	margin-top: 10px;
+	padding-bottom: 15px;
+
+}
+.meta .meta-pubtime {
+	background: url(img/clock.png) no-repeat left center;
+	padding-left: 14px;	
+}
+
+.meta .meta-comment {
+	background: url(img/comment.png) no-repeat left center;
+	padding-left: 18px;	
+}
+
+.meta .meta-comment .meta-comment-number {
+	padding-right: 5px;
+}
+.meta-comment a{
+	text-transform: none;
+}
+#media {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+#media a{
+	color: #464646;
+}
+#media h4{
+	border-bottom: 1px solid #acacac;
+    border-top: 4px solid #9e003a;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.media_posts a{
+	text-transform: none;
+	color: #626262;
+}
+.media_all{
+	border-bottom: 1px solid #acacac;;
+    border-top: 1px solid #acacac;;
+    margin-top: 300px;
+    text-align: center;
+}
+.media_all a{
+	color: #626262;
+}
+.meta p{
+	padding-top: 15px;
+}
+
+.meta {
+	display: block;
+	padding-top: 5px;
+}
+
+aside .sidebars { padding: 10px; float:left; }
+#sidebar1 { width:172px; float:left; font-size:1.2em;}
+#sidebar1 ul { list-style:none; }
+#sidebar2 { width:172px; float:left; font-size:1.2em; }
+#sidebar2 ul { list-style:none; }
+
+div.tabs { width:364px; color: #999; border-bottom: 1px solid #ddd; }
+div#mt_lexuara, div#mt_komentuara, div#mt_rastit { padding: 15px 10px; }
+ul.tabNavigation { float:left; background-color: #000000; margin-bottom:10px;  border-bottom: 1px solid #ddd; }
+ul.tabNavigation li { float: left; border-right:1px solid #ddd; height:28px; }
+ul.tabNavigation li:last-child { border-right:none; }
+ul.tabNavigation li a { text-transform:uppercase; display:block; font-size: 14px; color: #999; padding: 5px 10px; }
+ul.tabNavigation li a.selected { background-color: #fff; border-bottom:1px solid #fff; font-weight:bold; color: #000; }
+
+ul.metekomentuara li, ul.metelexuara li, ul.meterastit li { display:block; clear:both; padding-top:2px; position:relative; min-height:40px; border-bottom: 1px dotted #ddd; }
+ul.metekomentuara li img, ul.metelexuara li img, ul.meterastit li img { float:left; margin:4px 10px 4px 0; padding:1px; border:1px solid #ddd; }
+ul.metekomentuara li a, ul.metelexuara li a, ul.meterastit li a { float:left; font-size:1.3em; font-weight:normal; font-family:Arial,sans-serif!important; }
+ul.metekomentuara li span, ul.metelexuara li span, ul.meterastit li span { clear:both; }
+
+
+.search-icon{
+
+	background-color: black;
+	border: none;
+}
+.search{
+	background-color: #acacac;
+	border: none;
+}
+
+.first-article {
+	border:1px solid;
+	border-top: 20px solid;
+	margin-bottom: 	20px;
+}
+
+.first-article > h5 {
+	color: #fff;
+	margin-top: -17px;
+}
+
+.first-article > h6 {
+	color: #fff;
+	margin-top: -17px;
+	display: block;
+	float: right;
+}
+
+.first-article p {
+	line-height: 20px;
+	  margin-top: 10px;
+	  font-size: 13px;
+	  padding-left: 18px;
+}
+
+.icons {
+	border: 1px solid #808080;
+    margin-bottom: 17px;
+}
+
+.icons .twitter {
+	background: url(../images/twitter-icon.png) no-repeat left center;
+	padding: 5px 10px 5px 30px;
+}
+
+.icons .facebook {
+	background: url(../images/facebook-icon.png) no-repeat left center;
+	padding: 15px 11px 7px 31px;
+/*	background-position: -20px -205px;
+	height: 32px;
+	width:32px;*/
+}
+
+.icons .youtube {
+	background: url(../images/youtube-icon.png) no-repeat left center;
+	 padding: 15px 10px 5px 30px;
+}
+
+.icons .feed {
+	background: url(../images/rss-icon.png) no-repeat left center;
+	padding: 2px 10px 5px 30px;
+}
+
+.footer {
+	background-color: grey;
+}
+/*Travel News*/
+
+
+#travel>h4{
+	font-size: 18px;
+	font-weight: bold;
+	border-top: 4px solid #003471;
+	border-bottom: 1px solid #acacac;
+	margin-bottom: 10px;
+	margin-top: 35px;
+	padding: 6px 0px;
+
+}
+.travel-news img {
+
+	border:3px solid #021a40;
+}
