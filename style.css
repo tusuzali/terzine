@@ -304,6 +304,13 @@ background: url("img/home.png")
     font-weight: bold;
 }
 
+.news img {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+.news {  overflow: hidden; border-bottom: 1px solid #acacac; }
 /*BUSINESS NEWS CATEGORY*/
 #business a{
 	color: #464646;
