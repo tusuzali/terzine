@@ -304,7 +304,13 @@ background: url("img/home.png")
     font-weight: bold;
 }
 
-.news {  overflow: hidden; border-bottom: 1px solid #acacac; }
+.news img {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+
+.news { overflow: hidden; border-bottom: 1px solid #acacac; }
 
 /*BUSINESS NEWS CATEGORY*/
 #business a{
@@ -318,13 +324,24 @@ background: url("img/home.png")
 	font-size: 18px;
 	font-weight: bold;
 	border-top: 4px solid #003471;
+	border-top: 4px solid green;
+	/*border-bottom: 1px solid #acacac;*/
+	margin-bottom: 0px;
+	margin-top: 20px;
+	/*margin-top: -50px;*/
+	padding: 6px 0px;
 	border-bottom: 1px solid #acacac;
 	margin-bottom: 0;
     padding: 5px 0;
 	text-transform: uppercase;
 }
-
+.category-home > .news{
+	margin-bottom: 10px;
+} 
 .category-home {
+	border: 1px solid #acacac;
+	border-left: none;
+	padding: 15px 0;
 	-moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -379,6 +396,7 @@ background: url("img/home.png")
 
 .short-news:last-child {
 	border-bottom: none;
+	border-bottom: 1px solid rgb(172, 172, 172);
 }
 
 .clock p {
