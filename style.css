@@ -320,9 +320,14 @@ background: url("img/home.png")
 	padding-top: 10px;
 	margin-top: 30px;
 }
-.cat-section > h4{
+.cat-section h4{
 	font-size: 18px;
 	font-weight: bold;
+	/*border-top: 4px solid #003471;*/
+	/*border-bottom: 1px solid #acacac;*/
+	margin-bottom: 10px;
+	/*margin-top: -50px;*/
+	padding: 6px 0px;
 	border-top: 4px solid #003471;
 	border-top: 4px solid green;
 	/*border-bottom: 1px solid #acacac;*/
@@ -338,6 +343,7 @@ background: url("img/home.png")
 .category-home > .news{
 	margin-bottom: 10px;
 } 
+
 .category-home {
 	border: 1px solid #acacac;
 	border-left: none;
@@ -385,7 +391,7 @@ background: url("img/home.png")
 	border: 2px solid #acacac;
 	margin-bottom: 10px;
 	float: left;
-	margin-right: 15px;
+	margin-right: -12px;
 }
 .short-news {
 	margin-bottom: 10px;
@@ -505,6 +511,39 @@ ul.metekomentuara li a, ul.metelexuara li a, ul.meterastit li a { float:left; fo
 ul.metekomentuara li span, ul.metelexuara li span, ul.meterastit li span { clear:both; }
 
 
+
+
+.short-news img {
+    float: left;
+    border: 2px solid #acacac;
+    margin-right: 10px;
+}
+
+.paragraph {
+    display: inline;
+}
+
+.paragraph a {
+    font-size: 13px;
+
+}
+
+.viewallnews {
+    padding-bottom:20px;
+}
+
+.viewallnews h5{
+    border-top: 1px solid;
+    border-bottom: 1px solid #acacac;
+    text-align: center;
+}
+
+.reklam {
+    width: 600px;
+    height: 100px;
+    background-color: #fff;
+}
+
 .search-icon{
 
 	background-color: black;
@@ -571,7 +610,7 @@ ul.metekomentuara li span, ul.metelexuara li span, ul.meterastit li span { clear
 .footer {
 	background-color: grey;
 }
-/*Travel News*/
+
 
 
 #travel>h4{
