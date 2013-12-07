@@ -94,34 +94,35 @@
         		</div>
                 <?php endwhile; endif; ?>
 
-            <?php $args = array(
-                'posts_per_page'   => 3,
-                'offset'           => 1,
-                'category'         => 7,
-                'orderby'          => 'post_date',
-                'order'            => 'DESC',
-                'include'          => '',
-                'exclude'          => '',
-                'meta_key'         => '',
-                'meta_value'       => '',
-                'post_type'        => 'post',
-                'post_mime_type'   => '',
-                'post_parent'      => '',
-                'post_status'      => 'publish',
-                'suppress_filters' => true ); ?>
+                <?php $args = array(
+                    'posts_per_page'   => 3,
+                    'offset'           => 1,
+                    'category'         => 7,
+                    'orderby'          => 'post_date',
+                    'order'            => 'DESC',
+                    'include'          => '',
+                    'exclude'          => '',
+                    'meta_key'         => '',
+                    'meta_value'       => '',
+                    'post_type'        => 'post',
+                    'post_mime_type'   => '',
+                    'post_parent'      => '',
+                    'post_status'      => 'publish',
+                    'suppress_filters' => true ); ?>
 
-    		<div class="col span_6">
-                <?php $posts = get_posts($args);
-                      foreach ($posts as $post) : 
-                        setup_postdata($post); ?>        
-                <div class="short-news">
-                    <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
-                    <?php the_post_thumbnail(array(100 , 100)); ?>
-                    <div class="paragraph">
-                        <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
-                        <div class="meta">
-                            <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
-                            <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+        		<div class="col span_6">
+                    <?php $posts = get_posts($args);
+                          foreach ($posts as $post) : 
+                            setup_postdata($post); ?>        
+                    <div class="short-news">
+                        <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                        <?php the_post_thumbnail(array(100 , 100)); ?>
+                        <div class="paragraph">
+                            <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+                            <div class="meta">
+                                <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
+                                <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -133,6 +134,14 @@
 
         <?php
             $cat_id = 1; //the certain category ID
+                    <?php endforeach; ?>
+        		</div>
+                <p class="business_all span_12"><a href="#">View all ? News</a></p>
+            </div>
+	   </article>
+
+        <?php
+            $cat_id = 5; //the certain category ID
             $category = get_category( $cat_id );
         ?>
         <article id="<?php echo $category->slug; ?>" class="cat-section col">
@@ -188,10 +197,40 @@
                         <div class="meta">
                             <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
                             <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                <?php $args = array(
+                    'posts_per_page'   => 2,
+                    'offset'           => 1,
+                    'category'         => 5,
+                    'orderby'          => 'post_date',
+                    'order'            => 'DESC',
+                    'include'          => '',
+                    'exclude'          => '',
+                    'meta_key'         => '',
+                    'meta_value'       => '',
+                    'post_type'        => 'post',
+                    'post_mime_type'   => '',
+                    'post_parent'      => '',
+                    'post_status'      => 'publish',
+                    'suppress_filters' => true ); ?>
+
+                <div class="col">
+                    <?php $posts = get_posts($args);
+                          foreach ($posts as $post) : 
+                            setup_postdata($post); ?>        
+                    <div class="short-news col span_6">
+                        <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                        <?php the_post_thumbnail(array(100 , 100)); ?>
+                        <div class="paragraph">
+                            <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+                            <div class="meta">
+                                <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
+                                <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                            </div>
                         </div>
                     </div>
+                    <?php endforeach; ?>
                 </div>
-                <?php endforeach; ?>
+                <p class="business_all span_12"><a href="#">View all ? News</a></p>
             </div>
             <p class="view_all span_12"><a href="#">View all ? News</a></p>
         </div>
@@ -388,9 +427,53 @@
             <p class="view_all span_12"><a href="#">View all ? News</a></p>
         </div>
     </article>
-		
 
+        </article>
 
+        <!--Media-->
+       <article id="media" class="col">            
+            <h4><?php the_category( $cat_ID ); ?></h4>
+            <div class="span_3 media_posts">
+                <?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                    <div class="meta span_12">
+                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span>
+                        <br>
+                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                    </div>
+                <p><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></p>
+            </div>
+
+            <div class="span_3 media_posts">
+                <?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                    <div class="meta span_12">
+                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span>
+                        <br>
+                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                    </div>
+                <p><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></p>
+            </div>
+        
+            <div class="span_3 media_posts">
+                <?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                    <div class="meta span_12">
+                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span>
+                        <br>
+                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                    </div>
+                <p><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></p>
+            </div>
+
+            <div class="span_3 media_posts">
+                 <?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                    <div class="meta span_12">
+                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span>
+                        <br>
+                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                    </div>
+                <p><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></p>
+            </div>
+            <p class="media_all span_12"><a href="">View all Business News</a></p>
+        </article>
 	</section>
 
 <?php get_sidebar(); ?> 
