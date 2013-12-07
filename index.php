@@ -54,16 +54,18 @@
             <?php endforeach; ?>
         </article>
 
-        <?php
-            $cat_id = 10; //the certain category ID
-            $category = get_category( $cat_id );
-        ?>
-        <article id="<?php echo $category->slug; ?>" class="cat-section col">
-        <?php
-            $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
-            if( $latest_cat_post->have_posts() ) :
-                while( $latest_cat_post->have_posts() ) :
-                    $latest_cat_post->the_post(); ?>
+        <article id="<?php echo $category->slug; ?>" class="cat-section col"> 
+
+            <?php
+                $cat_id = 7; //the certain category ID
+                $category = get_category( $cat_id );
+            ?>
+
+            <?php
+                $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
+                if( $latest_cat_post->have_posts() ) :
+                    while( $latest_cat_post->have_posts() ) :
+                        $latest_cat_post->the_post(); ?>
     		
             <h4><?php echo $category->cat_name; ?></h4>
             <div class="category-home">
@@ -116,12 +118,12 @@
                 <?php endforeach; ?>
     		</div>
             <p class="business_all span_12"><a href="#">View all ? News</a></p>
-        </div>
-	</article>
+            </div>
+	   </article>
 
 
         <?php
-            $cat_id = 11; //the certain category ID
+            $cat_id = 6; //the certain category ID
             $category = get_category( $cat_id );
         ?>
         <article id="<?php echo $category->slug; ?>" class="cat-section col">
@@ -151,7 +153,7 @@
             <?php $args = array(
                 'posts_per_page'   => 2,
                 'offset'           => 1,
-                'category'         => 11,
+                'category'         => 6,
                 'orderby'          => 'post_date',
                 'order'            => 'DESC',
                 'include'          => '',
@@ -184,6 +186,149 @@
             <p class="business_all span_12"><a href="#">View all ? News</a></p>
         </div>
     </article>
+
+        
+<!-- Sport     -->
+
+    <?php
+            $cat_id = 6; //the certain category ID
+            $category = get_category( $cat_id );
+        ?>
+        <article id="<?php echo $category->slug; ?>" class="cat-section col span_6">
+        <?php
+                $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
+                if( $latest_cat_post->have_posts() ) :
+                    while( $latest_cat_post->have_posts() ) :
+                        $latest_cat_post->the_post(); ?>
+
+            <h4><?php echo $category->cat_name; ?></h4>
+         <div class="images"><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
+        <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
+            <div class="meta">
+                <span class="meta-pubtime"><?php the_time('l, jS') ?>|</span>
+                <span class="meta-comment"><span class="meta-comment-number"></span><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum , consectetur adipisicing lorem<br>
+                    ipsum consectetur adipisicing lorem ipsum<br>
+                    consectetur adipisicing lorem ipsum dolor sit<br>
+                    amet...</p>
+            </div>
+
+            <?php endwhile; endif; ?>
+
+            <?php $args = array(
+                'posts_per_page'   => 3,
+                'offset'           => 1,
+                'category'         => 6,
+                'orderby'          => 'post_date',
+                'order'            => 'DESC',
+                'include'          => '',
+                'exclude'          => '',
+                'meta_key'         => '',
+                'meta_value'       => '',
+                'post_type'        => 'post',
+                'post_mime_type'   => '',
+                'post_parent'      => '',
+                'post_status'      => 'publish',
+                'suppress_filters' => true ); ?>
+
+
+            <div class="post-thumbs col">
+                <?php $posts = get_posts($args);
+                      foreach ($posts as $post) : 
+                        setup_postdata($post); ?>        
+                <div class="short-news">
+                    <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                    <?php the_post_thumbnail(array(100 , 100)); ?>
+                    <div class="paragraph">
+                        <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+                        <div class="meta">
+                            <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
+                            <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+
+            <div class="viewallnews col">
+                <h5><a href="<?php the_permalink() ?>">View All News</h5>
+            </div>
+</article>
+               
+
+<!-- Technology -->
+
+ <?php
+            $cat_id = 7; //the certain category ID
+            $category = get_category( $cat_id );
+        ?>
+        <article id="<?php echo $category->slug; ?>" class="cat-section col span_6">
+        <?php
+                $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
+                if( $latest_cat_post->have_posts() ) :
+                    while( $latest_cat_post->have_posts() ) :
+                        $latest_cat_post->the_post(); ?>
+
+            <h4><?php echo $category->cat_name; ?></h4>
+            <div class="images"><?php echo get_the_post_thumbnail($post->ID, 'medium'); ?></div>
+            <h5><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+                <div class="meta">
+                    <span class="meta-pubtime"><?php the_time('l, jS') ?> |</span>
+                    <span class="meta-comment"><span class="meta-comment-number"></span><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum , consectetur adipisicing lorem<br>
+                    ipsum consectetur adipisicing lorem ipsum<br>
+                    consectetur adipisicing lorem ipsum dolor sit<br>
+                    amet...</p>
+                </div>
+
+                <?php endwhile; endif; ?>
+
+                <?php $args = array(
+                'posts_per_page'   => 3,
+                'offset'           => 1,
+                'category'         => 7,
+                'orderby'          => 'post_date',
+                'order'            => 'DESC',
+                'include'          => '',
+                'exclude'          => '',
+                'meta_key'         => '',
+                'meta_value'       => '',
+                'post_type'        => 'post',
+                'post_mime_type'   => '',
+                'post_parent'      => '',
+                'post_status'      => 'publish',
+                'suppress_filters' => true ); ?>
+
+            <div class="post-thumbs col">
+                <?php $posts = get_posts($args);
+                      foreach ($posts as $post) : 
+                        setup_postdata($post); ?>        
+                <div class="short-news">
+                    <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                    <?php the_post_thumbnail(array(100 , 100)); ?>
+                    <div class="paragraph">
+                        <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+                        <div class="meta">
+                            <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
+                            <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+             <div class="viewallnews col">
+                <h5><a href="<?php the_permalink() ?>">View All News</h5>
+            </div>
+
+            
+</article>
+
+
 
 
                    
