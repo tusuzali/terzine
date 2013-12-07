@@ -268,7 +268,7 @@ background: url("img/home.png")
 
 #news {
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: -20px;
 }
 
 #news > div {
@@ -313,18 +313,15 @@ background: url("img/home.png")
 #business {
 	padding-top: 10px;
 	margin-top: 30px;
-	border-right: 1px solid #acacac;
-	border-bottom: 1px solid #acacac;
 }
 .cat-section > h4{
 	font-size: 18px;
 	font-weight: bold;
 	border-top: 4px solid #003471;
 	/*border-bottom: 1px solid #acacac;*/
-	margin-bottom: 10px;
-	/*margin-top: -50px;*/
-	padding: 6px 0px;
-
+	margin-bottom: 0;
+    padding: 5px 0;
+	text-transform: uppercase;
 }
 
 .category-home {
@@ -355,6 +352,9 @@ background: url("img/home.png")
 
 .short-news a{
 	text-transform: none;
+}
+.paragraph>a{
+	font-size: 1.4rem;
 }
 
 .short-news img{
