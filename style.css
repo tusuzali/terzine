@@ -318,16 +318,22 @@ background: url("img/home.png")
 	font-size: 18px;
 	font-weight: bold;
 	border-top: 4px solid #003471;
-	/*border-bottom: 1px solid #acacac;*/
+	border-bottom: 1px solid #acacac;
 	margin-bottom: 0;
     padding: 5px 0;
 	text-transform: uppercase;
 }
 
 .category-home {
-	border: 1px solid #acacac;
-	border-left: none;
-	padding: 15px 0;
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #ACACAC #ACACAC #ACACAC -moz-use-text-color;
+    border-style: solid solid solid none;
+    border-width: 0 1px 1px medium;
+    margin: 0 0 15px;
+    padding: 10px 0;
 }
 
 .business-news img {
@@ -343,7 +349,7 @@ background: url("img/home.png")
 	font-size: 	14px;
 	margin-top: 10px;
 }
-.business_all{
+.view_all{
 	border-top: 1px solid #acacac;
 	margin-top: 373px;
 	text-align: center;
@@ -355,6 +361,7 @@ background: url("img/home.png")
 }
 .paragraph>a{
 	font-size: 1.4rem;
+	color: #626262
 }
 
 .short-news img{
@@ -387,7 +394,9 @@ background: url("img/home.png")
 	border: none;
 	margin-top: -10px;
 }
-
+.news-split{
+	float: right;
+}
 #ads > div {
 	width: 300px;
 	float: right;
@@ -418,6 +427,7 @@ background: url("img/home.png")
 }
 .meta-comment a{
 	text-transform: none;
+	color: #626262;
 }
 #media {
     margin-bottom: 20px;
@@ -559,4 +569,10 @@ ul.metekomentuara li span, ul.metelexuara li span, ul.meterastit li span { clear
 .travel-news img {
 
 	border:3px solid #021a40;
+}
+.cat-media {
+    margin-top: 10px;
+}
+.cat-media .short-news {
+    border: medium none;
 }
