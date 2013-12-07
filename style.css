@@ -304,18 +304,14 @@ background: url("img/home.png")
     font-weight: bold;
 }
 
-<<<<<<< HEAD
 .news img {
 	float: left;
 	margin-right: 15px;
 	margin-bottom: 15px;
 }
 
-.news {  overflow: hidden; border-bottom: 1px solid #acacac;}
-=======
-.news {  overflow: hidden; border-bottom: 1px solid #acacac; }
+.news { overflow: hidden; border-bottom: 1px solid #acacac; }
 
->>>>>>> 66e75b75a59546f0505450ce32150d13dfa22142
 /*BUSINESS NEWS CATEGORY*/
 #business a{
 	color: #464646;
@@ -328,30 +324,24 @@ background: url("img/home.png")
 	font-size: 18px;
 	font-weight: bold;
 	border-top: 4px solid #003471;
-<<<<<<< HEAD
+	border-top: 4px solid green;
 	/*border-bottom: 1px solid #acacac;*/
 	margin-bottom: 0px;
 	margin-top: 20px;
 	/*margin-top: -50px;*/
 	padding: 6px 0px;
-
-=======
 	border-bottom: 1px solid #acacac;
 	margin-bottom: 0;
     padding: 5px 0;
 	text-transform: uppercase;
->>>>>>> 66e75b75a59546f0505450ce32150d13dfa22142
 }
 .category-home > .news{
 	margin-bottom: 10px;
 } 
 .category-home {
-<<<<<<< HEAD
 	border: 1px solid #acacac;
 	border-left: none;
 	padding: 15px 0;
-
-=======
 	-moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -361,7 +351,6 @@ background: url("img/home.png")
     border-width: 0 1px 1px medium;
     margin: 0 0 15px;
     padding: 10px 0;
->>>>>>> 66e75b75a59546f0505450ce32150d13dfa22142
 }
 
 .business-news img {
