@@ -268,7 +268,7 @@ background: url("img/home.png")
 
 #news {
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: -20px;
 }
 
 #news > div {
@@ -313,8 +313,6 @@ background: url("img/home.png")
 #business {
 	padding-top: 10px;
 	margin-top: 30px;
-	border-right: 1px solid #acacac;
-	border-bottom: 1px solid #acacac;
 }
 .cat-section h4{
 	font-size: 18px;
@@ -324,13 +322,22 @@ background: url("img/home.png")
 	margin-bottom: 10px;
 	/*margin-top: -50px;*/
 	padding: 6px 0px;
-
-}
+	border-top: 4px solid #003471;
+	border-bottom: 1px solid #acacac;
+	margin-bottom: 0;
+    padding: 5px 0;
+	text-transform: uppercase;
 
 .category-home {
-	border: 1px solid #acacac;
-	border-left: none;
-	padding: 15px 0;
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #ACACAC #ACACAC #ACACAC -moz-use-text-color;
+    border-style: solid solid solid none;
+    border-width: 0 1px 1px medium;
+    margin: 0 0 15px;
+    padding: 10px 0;
 }
 
 .business-news img {
@@ -346,7 +353,7 @@ background: url("img/home.png")
 	font-size: 	14px;
 	margin-top: 10px;
 }
-.business_all{
+.view_all{
 	border-top: 1px solid #acacac;
 	margin-top: 373px;
 	text-align: center;
@@ -355,6 +362,10 @@ background: url("img/home.png")
 
 .short-news a{
 	text-transform: none;
+}
+.paragraph>a{
+	font-size: 1.4rem;
+	color: #626262
 }
 
 .short-news img{
@@ -387,7 +398,9 @@ background: url("img/home.png")
 	border: none;
 	margin-top: -10px;
 }
-
+.news-split{
+	float: right;
+}
 #ads > div {
 	width: 300px;
 	float: right;
@@ -418,6 +431,7 @@ background: url("img/home.png")
 }
 .meta-comment a{
 	text-transform: none;
+	color: #626262;
 }
 #media {
     margin-bottom: 20px;
@@ -476,61 +490,8 @@ ul.metekomentuara li img, ul.metelexuara li img, ul.meterastit li img { float:le
 ul.metekomentuara li a, ul.metelexuara li a, ul.meterastit li a { float:left; font-size:1.3em; font-weight:normal; font-family:Arial,sans-serif!important; }
 ul.metekomentuara li span, ul.metelexuara li span, ul.meterastit li span { clear:both; }
 
-/*Sport and Technology*/
 
 
-
-#sport {
-    border-top: 4px solid green;
-    padding-top: 5px;
-}
-
-#sport h4 {
-    border-bottom: 1px solid #acacac;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-#sport h5 {
-    font-size: 15px; 
-}
-
-#sport .description {
-    padding-bottom: 20px;
-}
-
-#sport .post-thumbs {
-    border-top:2px solid #acacac;
-    padding-bottom:0px;
-    padding-top:20px;
-}
-
-#technology {
-    border-top: 4px solid orange;
-    padding-top: 5px;
-    padding-left: 10px;
-}
-
-#technology h4 {
-    border-bottom: 1px solid #acacac;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-#technology .post-thumbs {
-    border-top:2px solid #acacac;
-    padding-bottom:0px;
-    padding-top:20px;
-}
-
-
-#technology .description {
-    padding-bottom: 20px;
-}
-
-#technology h5 {
-    font-size: 15px;    
-}
 
 .short-news img {
     float: left;
@@ -629,7 +590,7 @@ ul.metekomentuara li span, ul.metelexuara li span, ul.meterastit li span { clear
 .footer {
 	background-color: grey;
 }
-/*Travel News*/
+
 
 
 #travel>h4{
@@ -645,4 +606,10 @@ ul.metekomentuara li span, ul.metelexuara li span, ul.meterastit li span { clear
 .travel-news img {
 
 	border:3px solid #021a40;
+}
+.cat-media {
+    margin-top: 10px;
+}
+.cat-media .short-news {
+    border: medium none;
 }
