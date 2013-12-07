@@ -272,6 +272,7 @@
             </div>
             <p class="view_all span_12"><a href="#">View all ? News</a></p>
         </div>
+        </div>
     </article>
 
         </article>
