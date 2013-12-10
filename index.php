@@ -54,54 +54,30 @@
             <?php endforeach; ?>
         </article>
 
-        <?php
-            $cat_id = 7; //the certain category ID
-            $category = get_category( $cat_id );
-        ?>
+        <?php $cat_id = 7; //the certain category ID
+              $category = get_category( $cat_id ); ?>
         <article id="<?php echo $category->slug; ?>" class="cat-section col">
-        <?php
-            $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
-            if( $latest_cat_post->have_posts() ) :
-                while( $latest_cat_post->have_posts() ) :
-                    $latest_cat_post->the_post(); ?>
-    		
+            <?php $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => $cat_id));
+                if( $latest_cat_post->have_posts() ) :
+                    while( $latest_cat_post->have_posts() ) : $latest_cat_post->the_post(); ?>
             <h4><?php echo $category->cat_name; ?></h4>
             <div class="category-home">
         		<div class="col span_6">
-        	        <div class="<?php echo $category->cat_name; ?>-news news">
+        	        <div class="<?php echo $category->slug; ?>-news news">
         	            <?php echo get_the_post_thumbnail($post->ID, 'medium'); ?>
-        	                <h3><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-        	                <div class="meta">
-            	                <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> | 
-                                <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
-        	                </div>
-        	                <div class="<?php echo $category->cat_name; ?>-paragraph">
-        	                   <p><?php the_content('Continue Reading...'); ?></p>
-        	                </div> 
+                        <h3><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+        	            <div class="meta">
+                            <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> | 
+                            <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                        </div>
+                        <div class="<?php echo $category->slug; ?>-paragraph">
+                            <p><?php the_content('Continue Reading...'); ?></p>
+                        </div> 
         	        </div>
-        		</div>
-                <?php endwhile; endif; ?>
-
-                <?php $args = array(
-                    'posts_per_page'   => 3,
-                    'offset'           => 1,
-                    'category'         => 7,
-                    'orderby'          => 'post_date',
-                    'order'            => 'DESC',
-                    'include'          => '',
-                    'exclude'          => '',
-                    'meta_key'         => '',
-                    'meta_value'       => '',
-                    'post_type'        => 'post',
-                    'post_mime_type'   => '',
-                    'post_parent'      => '',
-                    'post_status'      => 'publish',
-                    'suppress_filters' => true ); ?>
-
+        		</div> <?php endwhile; endif; ?>
         		<div class="col span_6">
-                    <?php $posts = get_posts($args);
-                          foreach ($posts as $post) : 
-                            setup_postdata($post); ?>        
+                <?php $posts = get_posts( 'posts_per_page=3&offset=1&category=7' );
+                      foreach ($posts as $post) : setup_postdata($post); ?>        
                     <div class="short-news">
                         <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
                         <?php the_post_thumbnail(array(100 , 100)); ?>
@@ -112,37 +88,23 @@
                                 <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
                             </div>
                         </div>
-                    </div>
+                    </div> <?php endforeach; ?>
                 </div>
-                <?php endforeach; ?>
     		</div>
-            <p class="view_all span_12"><a href="#">View all ? News</a></p>
-        </div>
-	</article>
-
+            <p class="view_all col"><a href="#">View all ? News</a></p>
+        </article>
 
         <?php
-            $cat_id = 1; //the certain category ID
-                    <?php endforeach; ?>
-        		</div>
-                <p class="business_all span_12"><a href="#">View all ? News</a></p>
-            </div>
-	   </article>
-
-        <?php
-            $cat_id = 5; //the certain category ID
+            $cat_id = 2; //the certain category ID
             $category = get_category( $cat_id );
         ?>
         <article id="<?php echo $category->slug; ?>" class="cat-section col">
-        <?php
-            $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
-            if( $latest_cat_post->have_posts() ) :
-                while( $latest_cat_post->have_posts() ) :
-                    $latest_cat_post->the_post(); ?>
-            
+            <?php $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => $cat_id));
+                if( $latest_cat_post->have_posts() ) :
+                    while( $latest_cat_post->have_posts() ) : $latest_cat_post->the_post(); ?>
             <h4><?php echo $category->cat_name; ?></h4>
             <div class="category-home">
-                <div class="<?php echo $category->cat_name; ?>-news news">
+                <div class="<?php echo $category->slug; ?>-news news">
                     <?php echo get_the_post_thumbnail($post->ID, 'medium'); ?>
                     <div class="news-split span_6">
                         <h4><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h4>
@@ -150,61 +112,15 @@
                             <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> | 
                             <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
                         </div>
-                        <div class="<?php echo $category->cat_name; ?>-paragraph">
+                        <div class="<?php echo $category->slug; ?>-paragraph">
                            <p><?php the_content('Continue Reading...'); ?></p>
                         </div> 
                     </div>
-                </div>
-                <?php endwhile; endif; ?>
-
-            <?php $args = array(
-                'posts_per_page'   => 2,
-                'offset'           => 1,
-                'category'         => 10,
-                'orderby'          => 'post_date',
-                'order'            => 'DESC',
-                'include'          => '',
-                'exclude'          => '',
-                'meta_key'         => '',
-                'meta_value'       => '',
-                'post_type'        => 'post',
-                'post_mime_type'   => '',
-                'post_parent'      => '',
-                'post_status'      => 'publish',
-                'suppress_filters' => true ); ?>
-
-            <div class="col">
-                <?php $posts = get_posts($args);
-                      foreach ($posts as $post) : 
-                        setup_postdata($post); ?>        
-                <div class="short-news col span_6">
-                    <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
-                    <?php the_post_thumbnail(array(100 , 100)); ?>
-                    <div class="paragraph">
-                        <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
-                        <div class="meta">
-                            <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
-                            <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
-                <?php $args = array(
-                    'posts_per_page'   => 2,
-                    'offset'           => 1,
-                    'category'         => 5,
-                    'orderby'          => 'post_date',
-                    'order'            => 'DESC',
-                    'include'          => '',
-                    'exclude'          => '',
-                    'meta_key'         => '',
-                    'meta_value'       => '',
-                    'post_type'        => 'post',
-                    'post_mime_type'   => '',
-                    'post_parent'      => '',
-                    'post_status'      => 'publish',
-                    'suppress_filters' => true ); ?>
+                </div> <?php endwhile; endif; ?>
 
                 <div class="col">
-                    <?php $posts = get_posts($args);
-                          foreach ($posts as $post) : 
-                            setup_postdata($post); ?>        
+                    <?php $posts = get_posts('posts_per_page=2&offset=1&category=2');
+                          foreach ($posts as $post) : setup_postdata($post); ?>        
                     <div class="short-news col span_6">
                         <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
                         <?php the_post_thumbnail(array(100 , 100)); ?>
@@ -215,47 +131,121 @@
                                 <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
                             </div>
                         </div>
-                    </div>
-                    <?php endforeach; ?>
+                    </div> <?php endforeach; ?>
                 </div>
-                <p class="business_all span_12"><a href="#">View all ? News</a></p>
-            </div>
-            <p class="view_all span_12"><a href="#">View all ? News</a></p>
-        </div>
-    </article>
+                <div class="col">
+                    <?php $posts = get_posts('posts_per_page=2&offset=1&category=2');
+                          foreach ($posts as $post) : setup_postdata($post); ?>        
+                    <div class="short-news col span_6">
+                        <?php //echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
+                        <?php the_post_thumbnail(array(100 , 100)); ?>
+                        <div class="paragraph">
+                            <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+                            <div class="meta">
+                                <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
+                                <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                            </div>
+                        </div>
+                    </div> <?php endforeach; ?>
+                </div>
+            <p class="view_all col"><a href="#">View all ? News</a></p>
+        </article>
 
 
+        <!-- Sport -->
+        <?php
+            $cat_id = 6; //the certain category ID
+            $category = get_category( $cat_id );
+        ?>
+        <article id="<?php echo $category->slug; ?>" class="cat-section col span_6">
+            <?php $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => $cat_id));
+                if( $latest_cat_post->have_posts() ) :
+                    while( $latest_cat_post->have_posts() ) : $latest_cat_post->the_post(); ?>
+            <h4><?php echo $category->cat_name; ?></h4>
+            <div class="<?php echo $category->slug; ?>-news news">
+                <?php echo get_the_post_thumbnail($post->ID, 'medium'); ?>
+                <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
+                <div class="meta">
+                    <span class="meta-pubtime"><?php the_time('l, jS') ?>|</span>
+                    <span class="meta-comment"><span class="meta-comment-number"></span><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                </div>
+                <p class="description">Lorem ipsum , consectetur adipisicing lorem<br>
+                    ipsum consectetur adipisicing lorem ipsum<br>
+                    consectetur adipisicing lorem ipsum dolor sit<br>
+                    amet...</p>
+            </div> <?php endwhile; endif; ?>
+            <?php $posts = get_posts('posts_per_page=3&offset=1&category=6');
+                  foreach ($posts as $post) : 
+                      setup_postdata($post); ?>        
+            <div class="short-news">
+            <?php the_post_thumbnail(array(100 , 100)); ?>
+                <div class="paragraph">
+                    <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+                    <div class="meta">
+                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
+                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                    </div>
+                </div>
+            </div> <?php endforeach; ?>
+            <p class="view_all col"><a href="#">View all ? News</a></p>
+        </article>
                    
+        <!-- Technology -->
+        <?php
+            $cat_id = 7; //the certain category ID
+            $category = get_category( $cat_id );
+        ?>
+        <article id="<?php echo $category->slug; ?>" class="cat-section col span_6">
+            <?php $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => $cat_id));
+                if( $latest_cat_post->have_posts() ) :
+                    while( $latest_cat_post->have_posts() ) : $latest_cat_post->the_post(); ?>
+            <h4><?php echo $category->cat_name; ?></h4>
+            <div class="<?php echo $category->slug; ?>-news news">
+                <?php echo get_the_post_thumbnail($post->ID, 'medium'); ?>
+                <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
+                <div class="meta">
+                    <span class="meta-pubtime"><?php the_time('l, jS') ?>|</span>
+                    <span class="meta-comment"><span class="meta-comment-number"></span><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                </div>
+                <p class="description">Lorem ipsum , consectetur adipisicing lorem<br>
+                    ipsum consectetur adipisicing lorem ipsum<br>
+                    consectetur adipisicing lorem ipsum dolor sit<br>
+                    amet...</p>
+            </div> <?php endwhile; endif; ?>
+            <?php $posts = get_posts('posts_per_page=3&offset=1&category=7');
+                  foreach ($posts as $post) : 
+                      setup_postdata($post); ?>        
+            <div class="short-news">
+            <?php the_post_thumbnail(array(100 , 100)); ?>
+                <div class="paragraph">
+                    <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+                    <div class="meta">
+                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span> |
+                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
+                    </div>
+                </div>
+            </div> <?php endforeach; ?>
+            <p class="view_all col"><a href="#">View all ? News</a></p>
+        </article>
+
+        <!--Media-->
+        <?php
+            $cat_id = 3; //the certain category ID
+            $category = get_category( $cat_id );
+        ?>
         <article id="<?php echo $category->slug; ?>" class="cat-section col">
         <?php
             $latest_cat_post = new WP_Query( array('posts_per_page' => 1, 'category__in' => array($cat_id)));
             if( $latest_cat_post->have_posts() ) :
-                while( $latest_cat_post->have_posts() ) :
-                    $latest_cat_post->the_post(); ?>
+                while( $latest_cat_post->have_posts() ) : $latest_cat_post->the_post(); ?>
             
             <h4><?php echo $category->cat_name; ?></h4>
             <div class="media">
                 <div class="<?php echo $category->cat_name; ?>-news news">
                 <?php endwhile; endif; ?>
 
-            <?php $args = array(
-                'posts_per_page'   => 4,
-                'offset'           => 0,
-                'category'         => 9,
-                'orderby'          => 'post_date',
-                'order'            => 'DESC',
-                'include'          => '',
-                'exclude'          => '',
-                'meta_key'         => '',
-                'meta_value'       => '',
-                'post_type'        => 'post',
-                'post_mime_type'   => '',
-                'post_parent'      => '',
-                'post_status'      => 'publish',
-                'suppress_filters' => true ); ?>
-
             <div class="cat-media col">
-                <?php $posts = get_posts($args);
+                <?php $posts = get_posts('posts_per_page=4&offset=0&category=3');
                       foreach ($posts as $post) : 
                         setup_postdata($post); ?>        
                 <div class="short-news col span_3">
@@ -272,53 +262,6 @@
             </div>
             <p class="view_all span_12"><a href="#">View all ? News</a></p>
         </div>
-    </article>
-
-        </article>
-
-        <!--Media-->
-       <article id="media" class="col">            
-            <h4><?php the_category( $cat_ID ); ?></h4>
-            <div class="span_3 media_posts">
-                <?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
-                    <div class="meta span_12">
-                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span>
-                        <br>
-                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
-                    </div>
-                <p><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></p>
-            </div>
-
-            <div class="span_3 media_posts">
-                <?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
-                    <div class="meta span_12">
-                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span>
-                        <br>
-                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
-                    </div>
-                <p><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></p>
-            </div>
-        
-            <div class="span_3 media_posts">
-                <?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
-                    <div class="meta span_12">
-                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span>
-                        <br>
-                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
-                    </div>
-                <p><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></p>
-            </div>
-
-            <div class="span_3 media_posts">
-                 <?php echo get_the_post_thumbnail($post->ID, 'thumbnail'); ?>
-                    <div class="meta span_12">
-                        <span class="meta-pubtime"><?php the_time('l, jS,') ?></span>
-                        <br>
-                        <span class="meta-comment"><?php comments_popup_link('0 Comment','1 Comment','% Comments'); ?></span>
-                    </div>
-                <p><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></p>
-            </div>
-            <p class="media_all span_12"><a href="">View all Business News</a></p>
         </article>
 	</section>
 
